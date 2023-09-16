@@ -1,5 +1,5 @@
 import { Component } from "react";
-// import "./NavrbarStyles.css";
+ import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
 import {Link} from "react-router-dom"
 
@@ -12,7 +12,8 @@ class Navbar extends Component{
                     {MenuItems.map((items, index) =>{
                        return(
                         <li key={index}>
-                        <a href="/">
+                        <a className={items.cName}
+                        href="/">
                         <i className ={items.icon}></i>{items.title}</a>
                     </li>
                        )
