@@ -1,5 +1,7 @@
 import { Component } from "react";
-import "./NavrbarStyles.css";
+// import "./NavrbarStyles.css";
+import { MenuItems } from "./MenuItems";
+import {Link} from "react-router-dom"
 
 class Navbar extends Component{
     render(){
@@ -7,12 +9,18 @@ class Navbar extends Component{
             <nav className="NavbarItems">
                 <h1 className="navbar-logo"> Trippy</h1>
                 <ul className="nav-menu">
-                    <li>
-                        <link>
-                        Home</link>
+                    {MenuItems.map((items, index) =>{
+                       return(
+                        <li key={index}>
+                        <a href="/">
+                        <i className ={items.icon}></i>{items.title}</a>
                     </li>
+                       )
+                    })}
+                    
                 </ul>
             </nav>
         )
     }
 }
+export default Navbar;
